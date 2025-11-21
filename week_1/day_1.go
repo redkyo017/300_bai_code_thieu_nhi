@@ -2,7 +2,7 @@ package week1
 
 // Two Sum https://leetcode.com/problems/two-sum/
 // * One-Pass Hash table approach
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
 	m := make(map[int]int, len(nums))
 	for i, num := range nums {
 		complement := target - num
@@ -17,7 +17,7 @@ func twoSum(nums []int, target int) []int {
 }
 
 // 20. Valid Parentheses https://leetcode.com/problems/valid-parentheses
-func isValid(s string) bool {
+func IsValid(s string) bool {
 	open_close := map[rune]rune{
 		'}': '{',
 		']': '[',

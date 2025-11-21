@@ -1,7 +1,13 @@
 package main
 
-import "log"
+import (
+	week1 "300_codes/week_1"
+	"log"
+)
 
 func main() {
 	log.Println("con co be be")
+	nums := []int{0, 0, 0, 0}
+	res := week1.ThreeSum(nums)
+	log.Println("res", res)
 }
