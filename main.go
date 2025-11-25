@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	nums := []int{0, 0, 0, 0}
-	res := week1.ThreeSum(nums)
+	s := "aa"
+	res := week1.IsPalindrome(s)
 	log.Println("res", res)
 }
