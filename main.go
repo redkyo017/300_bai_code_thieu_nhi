@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	s := "aa"
-	res := week1.IsPalindrome(s)
+	s := "abcabcbb"
+	res := week1.LengthOfLongestSubstring(s)
 	log.Println("res", res)
 }
