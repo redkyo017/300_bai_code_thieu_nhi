@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	s := "abcabcbb"
-	res := week1.LengthOfLongestSubstring(s)
+	s := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	res := week1.GroupAnagrams(s)
 	log.Println("res", res)
 }
