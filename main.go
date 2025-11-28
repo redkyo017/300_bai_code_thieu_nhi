@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	s := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-	res := week1.GroupAnagrams(s)
+	nums := []int{1, 2, 3, 4}
+	res := week1.ProductExceptSelf(nums)
 	log.Println("res", res)
 }
