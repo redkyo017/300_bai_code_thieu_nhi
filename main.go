@@ -7,7 +7,8 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	nums := []int{1, 2, 3, 4}
-	res := week1.ProductExceptSelf(nums)
+	s := "ADOBECODEBANC"
+	t := "ABC"
+	res := week1.MinWindow(s, t)
 	log.Println("res", res)
 }
