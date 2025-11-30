@@ -1,14 +1,13 @@
 package main
 
 import (
-	week1 "300_codes/week_1"
+	week2 "300_codes/week_2"
 	"log"
 )
 
 func main() {
 	log.Println("con co be be")
-	s := "ADOBECODEBANC"
-	t := "ABC"
-	res := week1.MinWindow(s, t)
+	nums := []int{6, 5, 5}
+	res := week2.MajorityElement(nums)
 	log.Println("res", res)
 }
