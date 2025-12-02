@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	nums := []int{6, 5, 5}
-	res := week2.MajorityElement(nums)
+
+	res := week2.IsHappy(19)
 	log.Println("res", res)
 }
