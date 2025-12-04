@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-
-	res := week2.IsHappy(19)
+	nums := []int{100, 4, 200, 1, 3, 2}
+	res := week2.LongestConsecutive(nums)
 	log.Println("res", res)
 }
