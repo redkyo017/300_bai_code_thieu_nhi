@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	nums := []int{100, 4, 200, 1, 3, 2}
-	res := week2.LongestConsecutive(nums)
+	nums := []int{-1, -1, 1}
+	res := week2.SubarraySum(nums, 0)
 	log.Println("res", res)
 }
