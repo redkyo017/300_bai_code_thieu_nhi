@@ -7,7 +7,8 @@ import (
 
 func main() {
 	log.Println("con co be be")
-	nums := []int{-1, -1, 1}
-	res := week2.SubarraySum(nums, 0)
+	nums := []int{-1, 4, 2, 1, 9, 10}
+	// nums := []int{-1, -2, -60, 40, 43}
+	res := week2.FirstMissingPositive(nums)
 	log.Println("res", res)
 }
