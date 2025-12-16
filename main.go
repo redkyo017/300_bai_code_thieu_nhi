@@ -16,6 +16,10 @@ func main() {
 	node2.Next = &node3
 	node3.Next = &node4
 	node4.Next = &node5
-	res := week3.RotateRight(&node1, 2)
+	res := week3.ReverseList(&node1)
+	for res != nil {
+		log.Println("con co", res)
+		res = res.Next
+	}
 	log.Println("res", res)
 }

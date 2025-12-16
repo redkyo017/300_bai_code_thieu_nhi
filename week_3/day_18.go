@@ -2,16 +2,25 @@ package week3
 
 // 206. Reverse Linked List https://leetcode.com/problems/reverse-linked-list/description/
 func ReverseList(head *ListNode) *ListNode {
-	var prev *ListNode
-	current := head
+	// ITERATIVE
+	// var prev *ListNode
+	// current := head
 
-	for current != nil {
-		next := current.Next
-		current.Next = prev
-		prev = current
-		current = next
+	// for current != nil {
+	// 	next := current.Next
+	// 	current.Next = prev
+	// 	prev = current
+	// 	current = next
+	// }
+	// return prev
+	// RECURSIVE
+	if head == nil || head.Next == nil {
+		return head
 	}
-	return prev
+	newHead := ReverseList(head.Next)
+	head.Next.Next = head
+	head.Next = nil
+	return newHead
 }
 
 // 234. Palindrome Linked List https://leetcode.com/problems/palindrome-linked-list/description/c
