@@ -13,6 +13,7 @@ func ReverseList(head *ListNode) *ListNode {
 	// 	current = next
 	// }
 	// return prev
+
 	// RECURSIVE
 	if head == nil || head.Next == nil {
 		return head

@@ -42,3 +42,11 @@ This problem primarily teaches the structure for building a new list from an arb
 |Pointers|	l1, l2 (read); current (write).|	Pointers are advanced independently after their value is consumed.|
 |Carry|	Stores the overflow (sum / 10).	|The loop condition must account for a remaining carry even after both lists are exhausted(`l1 != nil or l2 != nil`)
 |Value|	sum % 10.|	The node value is always the remainder after carry is calculated.|
+
+## ✅ New Solution for Problem 206. Reverse Linked List (Recursive)
+|Aspect|Evaluation|Details|
+|---|---|---|
+|Correctness|Pass|The three core steps of recursive reversal are perfectly implemented: newHead stores the final answer, head.Next.Next = head performs the reversal of the link, and head.Next = nil breaks the forward link, preventing a cycle.|
+|Core Pattern|Mastered|This demonstrates a strong understanding of how to use the call stack to manage state and solve structural problems recursively.|
+|Time Complexity|O(N)|Optimal. Each of the $N$ nodes is visited exactly once.|
+|Space Complexity|O(N)|The space complexity is $O(N)$ due to the depth of the recursion stack. This is the main trade-off compared to the $O(1)$ iterative solution.
