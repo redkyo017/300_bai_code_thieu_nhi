@@ -74,33 +74,74 @@ func (this *MinStack) GetMin() int {
 // 844. Backspace String Compare https://leetcode.com/problems/backspace-string-compare/description/
 func BackspaceCompare(s string, t string) bool {
 	// STACK APPROACH - time O(N) - space O(N)
-	s1 := []rune{}
-	s2 := []rune{}
-	for _, c := range s {
-		if c == '#' {
-			if len(s1) > 0 {
-				s1 = s1[:len(s1)-1]
+	// s1 := []rune{}
+	// s2 := []rune{}
+	// for _, c := range s {
+	// 	if c == '#' {
+	// 		if len(s1) > 0 {
+	// 			s1 = s1[:len(s1)-1]
+	// 		}
+	// 	} else {
+	// 		s1 = append(s1, c)
+	// 	}
+	// }
+	// for _, c := range t {
+	// 	if c == '#' {
+	// 		if len(s2) > 0 {
+	// 			s2 = s2[:len(s2)-1]
+	// 		}
+	// 	} else {
+	// 		s2 = append(s2, c)
+	// 	}
+	// }
+	// if len(s1) != len(s2) {
+	// 	return false
+	// }
+	// for i := range s1 {
+	// 	if s1[i] != s2[i] {
+	// 		return false
+	// 	}
+	// }
+	// return true
+	// 2 POINTERS APPROACH - time O(N) - space O(1)
+	lenS, lenT := len(s), len(t)
+	skipS, skipT := 0, 0
+	i, j := lenS-1, lenT-1
+	for i >= 0 || j >= 0 {
+		for i >= 0 {
+			if s[i] == '#' {
+				i--
+				skipS++
+			} else {
+				if skipS > 0 {
+					i--
+					skipS--
+				} else {
+					break
+				}
 			}
-		} else {
-			s1 = append(s1, c)
 		}
-	}
-	for _, c := range t {
-		if c == '#' {
-			if len(s2) > 0 {
-				s2 = s2[:len(s2)-1]
+		for j >= 0 {
+			if t[j] == '#' {
+				skipT++
+				j--
+			} else {
+				if skipT > 0 {
+					j--
+					skipT--
+				} else {
+					break
+				}
 			}
-		} else {
-			s2 = append(s2, c)
 		}
-	}
-	if len(s1) != len(s2) {
-		return false
-	}
-	for i := range s1 {
-		if s1[i] != s2[i] {
+		if (i >= 0) != (j >= 0) {
 			return false
 		}
+		if i >= 0 && j >= 0 && s[i] != t[j] {
+			return false
+		}
+		i--
+		j--
 	}
 	return true
 }
