@@ -38,33 +38,22 @@ func EvalRPN(tokens []string) int {
 		if err == nil {
 			results = append(results, token)
 		} else {
+			op1 := results[len(results)-2]
+			op2 := results[len(results)-1]
+			results = results[:len(results)-2]
+			var number int
 			switch tokens[i] {
 			case "*":
-				op1 := results[len(results)-2]
-				op2 := results[len(results)-1]
-				results = results[:len(results)-2]
-				number := op1 * op2
-				results = append(results, number)
+				number = op1 * op2
 			case "/":
-				op1 := results[len(results)-2]
-				op2 := results[len(results)-1]
-				results = results[:len(results)-2]
-				number := op1 / op2
-				results = append(results, number)
+				number = op1 / op2
 			case "+":
-				op1 := results[len(results)-2]
-				op2 := results[len(results)-1]
-				results = results[:len(results)-2]
-				number := op1 + op2
-				results = append(results, number)
+				number = op1 + op2
 			case "-":
-				op1 := results[len(results)-2]
-				op2 := results[len(results)-1]
-				results = results[:len(results)-2]
-				number := op1 - op2
-				results = append(results, number)
+				number = op1 - op2
 			}
+			results = append(results, number)
 		}
 	}
-	return results[0]
+	return results[len(results)-1]
 }
