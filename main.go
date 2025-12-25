@@ -17,6 +17,6 @@ func main() {
 	// node3.Next = &node4
 	// node4.Next = &node5
 	// res := week4.BackspaceCompare("xywrrmp", "xywrrmu#p")
-	res := week4.SimplifyPath("/home/")
+	res := week4.DecodeString("3[a2[c]]")
 	log.Println("con co", res)
 }
