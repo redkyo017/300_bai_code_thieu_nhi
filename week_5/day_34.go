@@ -119,3 +119,48 @@ func Connect(root *Node) *Node {
 	}
 	return root
 }
+
+// 105. Construct Binary Tree from Preorder and Inorder Traversal https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+func BuildTree(preorder []int, inorder []int) *TreeNode {
+	// THE RECURSIVE WAY
+	// if len(preorder) == 0 || len(inorder) == 0 {
+	// 	return nil
+	// }
+	// root := &TreeNode{Val: preorder[0]}
+	// InorderLeft, InorderRight := []int{}, []int{}
+	// for i, val := range inorder {
+	// 	if val == preorder[0] {
+	// 		InorderLeft, InorderRight = inorder[:i], inorder[i+1:]
+	// 		break
+	// 	}
+	// }
+
+	// PreorderLeft, PreorderRight := preorder[1:len(InorderLeft)+1], preorder[len(InorderLeft)+1:]
+
+	// root.Left = BuildTree(PreorderLeft, InorderLeft)
+	// root.Right = BuildTree(PreorderRight, InorderRight)
+	// return root
+	// THE EFFICIENT WAY
+	m := make(map[int]int, len(inorder))
+	for i, val := range inorder {
+		m[val] = i
+	}
+	preIdx := 0
+
+	var build func(inStart int, inEnd int) *TreeNode
+	build = func(inStart int, inEnd int) *TreeNode {
+		if inStart > inEnd {
+			return nil
+		}
+		rootVal := preorder[preIdx]
+		root := &TreeNode{Val: rootVal}
+		preIdx++
+
+		pivot := m[rootVal]
+
+		root.Left = build(inStart, pivot-1)
+		root.Right = build(pivot+1, inEnd)
+		return root
+	}
+	return build(0, len(inorder)-1)
+}

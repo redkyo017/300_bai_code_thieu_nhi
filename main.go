@@ -1,7 +1,7 @@
 package main
 
 import (
-	week4 "300_codes/week_4"
+	week5 "300_codes/week_5"
 	"log"
 )
 
@@ -17,6 +17,6 @@ func main() {
 	// node3.Next = &node4
 	// node4.Next = &node5
 	// res := week4.BackspaceCompare("xywrrmp", "xywrrmu#p")
-	res := week4.LargestRectangleArea([]int{2, 1, 5, 6, 2, 3})
+	res := week5.BuildTree([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20, 7})
 	log.Println("con co", res)
 }
