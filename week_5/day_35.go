@@ -36,3 +36,40 @@ func IsValidBST(root *TreeNode) bool {
 	}
 	return dfs(root)
 }
+
+// 235. Lowest Common Ancestor of a Binary Search Tree https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+func LowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	curr := root
+	for curr != nil {
+		if p.Val < curr.Val && q.Val < curr.Val {
+			curr = curr.Left
+		} else if p.Val > curr.Val && q.Val > curr.Val {
+			curr = curr.Right
+		} else {
+			return curr // p.Val <= curr.Val && q.Val >= curr.Val) || (p.Val >= curr.Val && q.Val <= curr.Val
+		}
+	}
+	return nil
+}
+
+// 230. Kth Smallest Element in a BST https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+func KthSmallest(root *TreeNode, k int) int {
+	var result int
+	var dfs func(node *TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil || k < 0 {
+			return
+		}
+		dfs(node.Left)
+		if k > 0 {
+			k--
+			if k == 0 {
+				result = node.Val
+				return
+			}
+		}
+		dfs(node.Right)
+	}
+	dfs(root)
+	return result
+}
