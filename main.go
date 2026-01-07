@@ -17,6 +17,17 @@ func main() {
 	// node3.Next = &node4
 	// node4.Next = &node5
 	// res := week4.BackspaceCompare("xywrrmp", "xywrrmu#p")
-	res := week5.BuildTree([]int{3, 9, 20, 15, 7}, []int{9, 3, 15, 20, 7})
+	node1 := week5.TreeNode{Val: -1}
+	node2 := week5.TreeNode{Val: -2}
+	node3 := week5.TreeNode{Val: 10}
+	node4 := week5.TreeNode{Val: -6}
+	node5 := week5.TreeNode{Val: -3}
+	node6 := week5.TreeNode{Val: -6}
+	node1.Left = &node2
+	node1.Right = &node3
+	node2.Left = &node4
+	node3.Left = &node5
+	node3.Right = &node6
+	res := week5.MaxPathSum(&node1)
 	log.Println("con co", res)
 }
