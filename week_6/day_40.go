@@ -38,7 +38,9 @@ func SearchRange(nums []int, target int) []int {
  *			          false if current version is good
  * func isBadVersion(version int) bool;
  */
-func isBadVersion(version int) bool
+func isBadVersion(version int) bool {
+	return true
+}
 
 // 278. First Bad Version https://leetcode.com/problems/first-bad-version/description/
 func FirstBadVersion(n int) int {

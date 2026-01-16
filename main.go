@@ -28,6 +28,6 @@ func main() {
 	// node2.Left = &node4
 	// node3.Left = &node5
 	// node3.Right = &node6
-	res := week6.FindMin([]int{3, 1, 2})
+	res := week6.FindMedianSortedArrays([]int{1, 2}, []int{3, 4})
 	log.Println("con co", res)
 }
