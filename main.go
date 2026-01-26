@@ -1,7 +1,7 @@
 package main
 
 import (
-	week6 "300_codes/week_6"
+	week7 "300_codes/week_7"
 	"log"
 )
 
@@ -28,6 +28,6 @@ func main() {
 	// node2.Left = &node4
 	// node3.Left = &node5
 	// node3.Right = &node6
-	res := week6.FindMedianSortedArrays([]int{1, 2}, []int{3, 4})
+	res := week7.FloodFill([][]int{{0, 0, 0}, {0, 0, 0}}, 0, 0, 0)
 	log.Println("con co", res)
 }
